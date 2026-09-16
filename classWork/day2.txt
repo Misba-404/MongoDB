@@ -1,0 +1,53 @@
+MongoDb Day2 classwork
+
+>use SchoolLibrary
+// creates db named SchoolLibrary, or switch to it if exists
+< switched to db SchoolLibrary
+
+
+>db.createCollection("Books")
+// creted collection named Books. nb:it does not reflect on the left panel,
+// unless a content is added
+<{
+  acknowledged: true,
+  insertedId: ObjectId('6aaa3c542a34239698c5f83f')
+}
+
+
+>show collections
+// used to view collections 
+<Books
+
+
+>db.Books.find()
+// used to display contents in mongosh shell
+<{
+  _id: ObjectId('6aaa3c542a34239698c5f83f'),
+  title: 'Introduction to science',
+  author: 'Dr.Smith',
+  available: true
+}
+
+
+>db.Books.drop()
+// used to drop collection (drop = delete)
+<true
+
+>show collections
+// verify drop
+<
+
+
+>db.dropDatabase()
+// used to drop dropDatabase 
+<{ ok: 1, dropped: 'SchoolLibrary' }
+
+
+>show dbs 
+//check if SchoolLibrary exists
+<admin    40.00 KiB
+config  108.00 KiB
+local    76.00 KiB
+
+
+

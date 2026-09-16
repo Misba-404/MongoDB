@@ -1,0 +1,34 @@
+MongoDb Day2 Homework
+
+>use BakeryShop
+
+>db.createCollection("Orders")
+
+>show collections
+
+<Orders
+
+>db.Orders.insertOne({customerName:"Alice Johnson",item: "Chocolate Cake",quantity: 2,totalPrice: 500})
+>db.Orders.find()
+{
+  _id: ObjectId('6aaa4d562a34239698c5f840'),
+  customerName: 'Alice Johnson',
+  item: 'Chocolate Cake',
+  quantity: 2,
+  totalPrice: 500
+}
+
+>db.Orders.drop()
+
+>db.dropDatabase()
+
+>show databases
+<admin    40.00 KiB
+config  108.00 KiB
+local    76.00 KiB
+
+>show collections
+<
+
+
+

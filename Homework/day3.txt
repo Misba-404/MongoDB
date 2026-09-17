@@ -1,0 +1,11 @@
+HomeWork Day3 mongodb
+
+>use company-db
+>db.createCollection("employees")
+>show collections
+>db.employees.insertOne({name:"ravi kumar",age:28,isActive:true,salary:45000.50,skills:["JavaScript","Node.js","MongoDB"],contact:{email:"ravi@example.com",phone:"9876543210"},joinedDate:Date(),mangerAssigned:null})
+// to insert one document using "insertOne()"
+
+>db.employees.insertMany([{name:"Misbahudeen s",age:21,isActive:true,salary:50000.50,skills:["JavaScript","Node.js","MongoDB","Html","CSS"],contact:{email:"misbah@example.com",phone:"9188012431"},joinedDate:Date(),mangerAssigned:null},{name:"Minha Siraj",age:19,isActive:true,salary:60000.50,skills:["JavaScript","Node.js","MongoDB","Digital Marketing"],contact:{email:"minha@example.com",phone:"9123405678"},joinedDate:Date(),mangerAssigned:null},{name:"Eid Ahmed",age:26,isActive:true,salary:85000.00,skills:["JavaScript","Node.js","MongoDB".".NET","React","Angular"],contact:{email:"eidahmed@example.com",phone:"9876543210"},joinedDate:Date(),mangerAssigned:null}])
+// to insert multiple docs at a time using "insertMany"
+

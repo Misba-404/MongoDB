@@ -1,0 +1,57 @@
+Mongodb classwork day 3 
+
+>use event_tracker
+>db.createCollection("upcomingEvents")
+>db.upcomingEvents.insertOne({name:"Music Fest",date:Date(),isFreeEntry:false,ticketPrice:299.99,performers:["DJ Max","Live Band"],location:{city:"Chennai",venue:"Beach Arena"},specialCode:null})
+>db.upcomingEvents.insertMany([{name:"Movie Fest",date:Date(),isFreeEntry:false,ticketPrice:159.99,performers:["Leonardio DeCaprio","Will Smith"],location:{city:"New York",venue:"Opera Hall"},specialCode:"vamos"},{name:"Anime Fest",date:Date(),isFreeEntry:true,ticketPrice:0.00,performers:["Tanjiro","Itachi Uchiha"],location:{city:"Japan",venue:"akumo clan"},specialCode:null}])
+>show collections
+>db.upcomingEvents.find()
+<{
+  _id: ObjectId('6aab8e0540023a6385324c7d'),
+  name: 'Music Fest',
+  date: 'Thu Sep 17 2026 12:21:49 GMT+0530 (India Standard Time)',
+  isFreeEntry: false,
+  ticketPrice: 299.99,
+  performers: [
+    'DJ Max',
+    'Live Band'
+  ],
+  location: {
+    city: 'Chennai',
+    venue: 'Beach Arena'
+  },
+  specialCode: null
+}
+{
+  _id: ObjectId('6aab913740023a6385324c7e'),
+  name: 'Movie Fest',
+  date: 'Thu Sep 17 2026 12:35:27 GMT+0530 (India Standard Time)',
+  isFreeEntry: false,
+  ticketPrice: 159.99,
+  performers: [
+    'Leonardio DeCaprio',
+    'Will Smith'
+  ],
+  location: {
+    city: 'New York',
+    venue: 'Opera Hall'
+  },
+  specialCode: 'vamos'
+}
+{
+  _id: ObjectId('6aab913740023a6385324c7f'),
+  name: 'Anime Fest',
+  date: 'Thu Sep 17 2026 12:35:27 GMT+0530 (India Standard Time)',
+  isFreeEntry: true,
+  ticketPrice: 0,
+  performers: [
+    'Tanjiro',
+    'Itachi Uchiha'
+  ],
+  location: {
+    city: 'Japan',
+    venue: 'akumo clan'
+  },
+  specialCode: null
+}
+

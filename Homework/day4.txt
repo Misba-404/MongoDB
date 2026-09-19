@@ -1,1 +1,33 @@
 Homework day4 MongoDB
+
+>use BookStoreDB
+>db.Books.insertMany([
+    { title: "Harry Potter and the Philosopher's Stone", author: "J.K. Rowling", price: 399.99, year: 1997, available: true },
+    { title: "The Hobbit", author: "J.R.R. Tolkien", price: 299.99, year: 1937, available: true },
+    { title: "The Da Vinci Code", author: "Dan Brown", price: 499.99, year: 2003, available: false },
+    { title: "A Game of Thrones", author: "George R.R. Martin", price: 599.99, year: 1996, available: true },
+    { title: "The Girl on the Train", author: "Paula Hawkins", price: 349.99, year: 2015, available: true },
+    { title: "Becoming", author: "Michelle Obama", price: 449.99, year: 2018, available: true },
+    { title: "The Catcher in the Rye", author: "J.D. Salinger", price: 199.99, year: 1951, available: false },
+    { title: "The Night Circus", author: "Erin Morgenstern", price: 299.99, year: 2011, available: true },
+    { title: "1984", author: "George Orwell", price: 249.99, year: 1949, available: true },
+    { title: "Educated", author: "Tara Westover", price: 399.99, year: 2018, available: false }
+]);
+
+>db.Books.find()
+
+>db.Books.find({price:{$lt:500}})
+// To find books with "price" less than "($lt)" 500 
+
+>db.Books.find({author:"J.K. Rowling"})
+// TO find "author" 
+
+>db.Books.find({$and:[{year:{$gt:2010}},{price:{$gte:300}}]})
+// Queries the AND value ($and) in which the "year" is Greater than($gt) 2010
+// and "price" GreaterThanorEqualto ($gte) 300
+
+>db.Books.find({$or:[{price:{$lt:200}},{available:false}]})
+// TO Find books that are either priced less than 200 OR($or) are not "available"((false)/($ne:true)).
+
+>db.Books.find({price:{$ne:450}})
+// to find books with "price" NotEqualto($ne) 450

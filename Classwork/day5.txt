@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 day 5 ClassWork MongoDB
 test 
+=======
+day 5 ClassWork MongoDB
+>>>>>>> 13e4d41 (Fix formatting in Day 5 classwork file for MongoDB)

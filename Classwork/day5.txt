@@ -1,1 +1,13 @@
 day 5 ClassWork MongoDB
+
+>db.Clothes.find({price:{$gt:500}})
+>db.Clothes.find({category:"Shirt"})
+>db.Clothes.findOne({category:"Shirt"})
+// to display only one result
+
+>db.Clothes.find({$and:[{price:{$gte:300}},{stock:{$gt:10}}]})
+>db.Clothes.find({$or:[{price:{$lt:200}},{discount:true}]})
+>db.Clothes.updateOne({name:"Denim Jeans"},{$set:{stock:50}})
+>db.Clothes.updateOne({name:"Denim Jeans"},{$set:{price:1200}})
+>db.Clothes.deleteOne({stock:0})
+// to delete only one with stock value exactly one 

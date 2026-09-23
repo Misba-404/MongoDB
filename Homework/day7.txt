@@ -18,5 +18,9 @@ Homework day7 MongoDB
 // to show only title and author
 
 >db.books.find({},{_id:0,title:1,author:1,rating:1}).sort({rating:-1}).limit(5)
+// to sort in ratign highest first[decending order(-1)] and limit to 5 results
 
->
+>db.books.find({},{_id:0,title:1,price:1}).sort({price:1}).skip(3).limit(4)
+
+>db.books.distinct("genre")
+// it only show repetitive categories into displaying once

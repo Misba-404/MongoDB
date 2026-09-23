@@ -23,3 +23,5 @@ Classwork Day 7 MongoDB
 >db.products.find({},{_id:0,name:1,rating:1}).skip(5).limit(4).sort({rating:-1})
 // to sort by rating 
 >db.products.find({},{_id:0,name:1,rating:1}).sort({rating:-1}).skip(5).limit(4)
+>db.products.distinct("category")
+// To show the repeating categories show only ones

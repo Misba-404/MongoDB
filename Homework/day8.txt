@@ -20,21 +20,27 @@ Homework Day 8 MongoDB
     category:"Laptops"
   }}
 ])
+// to display only category
 
 >db.sales.aggregate([
   {$group:{_id:"$product",totalQuantity:{$sum:"$quantity"}}}
 ])
+// to group by product and display total quantity
 
 >db.sales.aggregate([
   {$group:{
     _id:"$product",Average:{$avg:"$price"}
   }}
 ])
+// to group by product and display average
 
 >db.sales.aggregate([
   {$sort:{quantity:-1}}
 ])
+// to sort in decending order of quantity sold
 
 >db.sales.aggregate([
-  {$addFields:{"Total revenue test":{toFixed({$multiply:["$price","$quantity"]})}}}
+  {$addFields:{"Total revenue":{$multiply:["$price","$quantity"]}}}
 ])
+// to add new field of total revenue 
+

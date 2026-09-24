@@ -35,4 +35,6 @@ Homework Day 8 MongoDB
   {$sort:{quantity:-1}}
 ])
 
->
+>db.sales.aggregate([
+  {$addFields:{"Total revenue test":{toFixed({$multiply:["$price","$quantity"]})}}}
+])

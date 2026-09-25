@@ -1,0 +1,21 @@
+HomeWork DAY 9 MongoDB
+
+>use onlineStore_day9
+>db.products.insertMany([
+  {
+    "name": "Laptop",
+    "category": "Electronics",
+    "price": 800,
+    "stock": 15
+  }])
+
+>db.products.createIndex({category:1})
+// to create index on the category on ascending order
+>db.products.createIndex({price:-1})
+>db.products.getIndexes()
+// to display the indexes
+
+db.products.dropIndex({category:1})
+// to drop the index category
+
+

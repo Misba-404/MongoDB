@@ -1,0 +1,15 @@
+day 9 ClassWork MongoDB
+
+>use blogApp
+>db.createCollection("posts")
+>db.posts.insertMany([
+  {title:"Atomic Habits",author:"James Clear",tags:"#selfhelp",publishedDate:20-1-2019},
+  {title:"The Alchemist",author:"Paulo Cohelo",tags:"#treasurehunt",publishedDate:26-10-2020},
+  {title:"Rich Dad Poor Dad",author:"Rober T.Kiyosaki",tags:"#finance",publishedDate:10-2-2018},
+])
+
+>db.posts.createIndex({author:1})
+>db.posts.createIndex({publishedDate:-1})
+>db.posts.getIndexes()
+>db.posts.dropIndex({author:1})
+

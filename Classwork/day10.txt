@@ -1,0 +1,19 @@
+classwork day 10 MongoDB
+
+>use mashupdb
+>db.createCollection("students")
+>db.students.createIndex({grade:1})
+//used to create index on grade in ascending order
+>db.students.getIndexes()
+<[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { grade: 1 }, name: 'grade_1' }
+]
+
+>db.students.dropIndex({grade:1})
+// to drop index grade 
+>db.students.getIndexes()
+<[ { v: 2, key: { _id: 1 }, name: '_id_' } ] // result
+
+>mongoexport --db=mashupdb --collection=students --limit=3 --sort='{_id:1}' --out=/home/misbah/Documents/test/sorted3.json
+// to export the data limited to 3 and sorder on id ascending as sorted3.json in JSON file format in the specified path

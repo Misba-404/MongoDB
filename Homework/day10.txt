@@ -1,0 +1,17 @@
+HomeWork day10 MongoDB
+
+>use mashupdb
+>mongoexport --db=mashupdb --collection=students --out=/home/misbah/Documents/test/studentData.json  
+// to export db into json
+
+>mongoexport --db=mashupdb --collection=students --type=csv --fields=_id,name,grade --out=/home/misbah/Documents/test/converted.csv
+// to export as csv after mentioning the fields--db=mashupdb --collection=students --type=csv --fields=_id,name,grade --out=/home/misbah/Documents/test/converted.csv
+
+>mongoexport --db=mashupdb --collection=students --limit=4 --out=/home/misbah/Documents/test/studentData.json  
+// to export only first 4 by limiting to 4
+
+>mongoexport --db=mashupdb --collection=students --limit=3 --sort='{_id=1}' --out=/home/misbah/Documents/test/studentData.json  
+// to export first 3 after sorting id on ascending order
+
+>mongoexport --db=mashupdb --collection=students --skip=2 --sort="{_id=1}" --out=/home/misbah/Documents/test/studentData.json  
+// to export the data after skipping the first 2 result and after sorting the id in ascending

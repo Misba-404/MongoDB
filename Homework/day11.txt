@@ -1,0 +1,38 @@
+HomeWork day11 MongoDB
+
+>use tickets_db
+>db.tickets.insertMany([
+  {
+    "subject": "Login Error on Dashboard",
+    "description": "I encounter a 500 internal error whenever I try to log in.",
+    "createdAt": ISODate("2026-09-25T10:00:00Z")
+  },
+  {
+    "subject": "Payment failed during checkout",
+    "description": "My credit card was charged but the system says the transaction failed.",
+    "createdAt": ISODate("2026-09-26T11:15:00Z")
+  },
+  {
+    "subject": "Feature request: Dark mode",
+    "description": "It would be great to have a dark theme for night usage.",
+    "createdAt": ISODate("2026-09-27T14:30:00Z")
+  },
+  {
+    "subject": "Database connection error",
+    "description": "The application is losing connection to the secondary database cluster.",
+    "createdAt": ISODate("2026-09-28T09:00:00Z")
+  }
+]);
+
+>db.tickets.createIndex({subject:"text",description:"text"})
+// to create index on subject and description at the same time as text indexes
+
+>db.tickets.getIndexes()
+// to display all the created indexes
+
+>db.tickets.find({$text:{$search:"error"}})
+// to search the word "error" in the Documents and displays the Documents containing it 
+
+>db.tickets.find({$text:{$search:"payment failed"}})
+// to search similarly
+

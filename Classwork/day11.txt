@@ -1,0 +1,70 @@
+Classwork Day11 MongoDB
+
+>use articles_db
+>db.posts.insertMany([
+  {
+    title: "Atomic Habits",
+    author: "James Clear",
+    tags: "#selfhelp",
+    publishedDate: NumberInt(2000)
+  },
+  {
+    title: "The Alchemist",
+    author: "Paulo Cohelo",
+    tags: "#treasurehunt",
+    publishedDate: NumberInt(2004)
+  },
+  {
+    title: "Rich Dad Poor Dad",
+    author: "Rober T.Kiyosaki",
+    tags: "#finance",
+    publishedDate: NumberInt(2010)
+  },
+  {
+    title: "Deep Work",
+    author: "asdas",
+    tags: "#productivity",
+    publishedDate: NumberInt(2011)
+  },
+  {
+    title: "Five Point Someone",
+    author: "Chetan Bhagath",
+    tags: "#fiction",
+    publishedDate: NumberInt(2021)
+  },
+  {
+    title: "mindset",
+    author: "Carol Dwek",
+    tags: "#selfhelp",
+    publishedDate: NumberInt(2005)
+  }
+]);
+
+>db.posts.createIndex({ author: "text" })
+// to create index based on author in text 
+
+>db.posts.find({$text:{$search:"Bhagath"}})
+// used to access the indexed data 
+
+>db.posts.getIndexes()
+// to see all the created indexes in the posts collection
+
+<[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  {
+    v: 2,
+    key: { _fts: 'text', _ftsx: 1 },
+    name: 'author_text',
+    weights: { author: 1 },
+    default_language: 'english',
+    language_override: 'language',
+    textIndexVersion: 3
+  }
+]
+
+>db.posts.dropIndex("author_text")
+// to drop the index named "author_text"
+
+>db.posts.getIndexes()
+// to see ll the created indexes and dispalys if any updations are made 
+

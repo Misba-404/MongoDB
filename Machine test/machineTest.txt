@@ -1,0 +1,37 @@
+MongoDB Machine Test queries
+
+1.  >db.employee.find({$and:[{department:"Sales"},{leave:{$gt:5}}]})
+
+2.  >db.employee.aggregate([
+      {$match:{department:"Operations"}},
+      {$count:"Total Employees"}
+    ])
+
+3.  >db.employee.aggregate([{$group:{_id:"$department",totalEmployees:{$sum:1}}}])
+
+4.  >db.employee.aggregate([
+      {$group:{_id:"$department",totalLeaves:{$sum:"$leave"}}},
+      {$match:{totalLeaves:{$gt:10}}}
+    ])
+
+5.  >db.employee.aggregate([
+      {$lookup:{
+        from:"exam",
+        localField:"id",
+        foreignField:"employee_id",
+        as:"result"
+      }},
+      {$unwind:"$result"},
+      {$count:"total_docs"}
+    ])
+
+6.  >db.employee.aggregate([
+     {$lookup:{
+        from:"exam",
+        localField:"id",
+        foreignField:"employee_id",
+        as:"result"
+      }},
+      {$match:{result:[]}},
+      {$project:{name:1,_id:0}}
+    ])

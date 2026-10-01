@@ -14,16 +14,18 @@ MongoDB Machine Test queries
       {$match:{totalLeaves:{$gt:10}}}
     ])
 
-5.  >db.employee.aggregate([
-      {$lookup:{
-        from:"exam",
-        localField:"id",
-        foreignField:"employee_id",
-        as:"result"
-      }},
-      {$unwind:"$result"},
-      {$count:"total_docs"}
+5.  db.employee.aggregate([
+    {$lookup:{
+      from:"exam",
+      localField:"id",
+      foreignField:"employee_id",
+      as:"result"
+    }},
+    {$unwind:"$result"},
+    {$match:{"result.exam_status":"Pass"}},
+    {$project:{_id:0,name:1}}
     ])
+
 
 6.  >db.employee.aggregate([
      {$lookup:{
